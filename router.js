@@ -2,6 +2,8 @@ var express = require('express')
 
 // 引入页面管理控制器
 var pagesController = require('./controllers/pagesController')
+// 引入用户管理控制器
+var usersController = require('./controllers/usersController')
 // 创建路由模块对象
 var router = express.Router()
 // 挂载路由配置
@@ -12,8 +14,6 @@ var router = express.Router()
 router.get('/',pagesController.getIndexPage)
       .get('/detail',pagesController.getDetailPage)
       .get('/list',pagesController.getListPage)
-
-
 // 返回后台管理页面
       .get('/admin',pagesController.getAdminPage)
       .get('/admin/categories',pagesController.getCategoriesPage)
@@ -28,6 +28,7 @@ router.get('/',pagesController.getIndexPage)
       .get('/admin/slides',pagesController.getSlidesPage)
       .get('/admin/users',pagesController.getUsersPage)
 
-
+// 后台业务处理
+      .post('/login',usersController.login)
 
 module.exports = router

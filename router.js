@@ -33,5 +33,6 @@ router.get('/',pagesController.getIndexPage)
 // 后台业务处理
       .post('/login',usersController.login)
       .get('/getCategories',cateController.getAllCateList)
+      .post('/updateCategories',cateController.updateCategories)
 
 module.exports = router

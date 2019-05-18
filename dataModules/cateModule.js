@@ -12,3 +12,15 @@ exports.getAllList = (callback) => {
         }
     })
 }
+
+// 根据id实现编辑操作
+exports.updateCategories = (obj,callback) => {
+    var sql = "update categories set slug = ?,name = ? where id = ?"
+    connection.query(sql,[obj.slug,obj.name,obj.id],(err,results) => {
+        if(err){
+            callback(err)
+        }else{
+            callback(null)
+        }
+    })
+}

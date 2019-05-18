@@ -10,3 +10,23 @@ exports.getAllCateList = (req,res) => {
         }
     })
 }
+
+// 实现分类数据的编辑提交
+exports.updateCategories = (req,res) => {
+    // 接收用户数据
+    var obj = req.body
+    // 调用数据模块进行编辑操作
+    cateController.updateCategories(obj,(err) => {
+        if(err){
+            res.json({
+                code:201,
+                msg:'编辑失败'
+            })
+        }else{
+            res.json({
+                code:200,
+                msg:'编辑成功'
+            })
+        }
+    })
+}

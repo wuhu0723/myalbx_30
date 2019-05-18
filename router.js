@@ -34,5 +34,6 @@ router.get('/',pagesController.getIndexPage)
       .post('/login',usersController.login)
       .get('/getCategories',cateController.getAllCateList)
       .post('/updateCategories',cateController.updateCategories)
+      .post('/addCategories',cateController.addCategories)
 
 module.exports = router

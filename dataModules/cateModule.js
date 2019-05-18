@@ -24,3 +24,15 @@ exports.updateCategories = (obj,callback) => {
         }
     })
 }
+
+// 实现编辑新增
+exports.addCategories = (obj,callback) => {
+    var sql = "insert categories values(null,?,?)"
+    connection.query(sql,[obj.slug,obj.name],(err,results) => {
+        if(err){
+            callback(err)
+        }else{
+            callback(null)
+        }
+    })
+}

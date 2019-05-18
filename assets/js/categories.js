@@ -58,4 +58,26 @@ $(function () {
             }
         })
     })
+
+    // 实现添加分类数据
+    $('.btnAdd').on('click', function () {
+        // 验证自己实现
+        $.ajax({
+            type: 'post',
+            url: '/addCategories',
+            data: $('form').serialize(),
+            dataType: 'json',
+            success: function (result) {
+                if (result.code == 200) {
+                    $('.alert-danger span').text(result.msg)
+                    $('.alert-danger').fadeIn(1000).delay(2000).fadeOut(1000)
+                    // 刷新
+                    init()
+                } else {
+                    $('.alert-danger span').text(result.msg)
+                    $('.alert-danger').fadeIn(1000).delay(2000).fadeOut(1000)
+                }
+            }
+        })
+    })
 })

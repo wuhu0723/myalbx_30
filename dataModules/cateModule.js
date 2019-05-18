@@ -36,3 +36,15 @@ exports.addCategories = (obj,callback) => {
         }
     })
 }
+
+// 实现根据id删除分类数据
+exports.delCategoryById = (id,callback) => {
+    var sql = "delete from categories where id = ?"
+    connection.query(sql,[id],(err,results) => {
+        if(err){
+            callback(err)
+        }else{
+            callback(null)
+        }
+    })
+}

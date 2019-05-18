@@ -35,5 +35,6 @@ router.get('/',pagesController.getIndexPage)
       .get('/getCategories',cateController.getAllCateList)
       .post('/updateCategories',cateController.updateCategories)
       .post('/addCategories',cateController.addCategories)
+      .get('/delCategoryById',cateController.delCategoryById)
 
 module.exports = router

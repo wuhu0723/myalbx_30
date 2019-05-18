@@ -1,4 +1,5 @@
 var cateController = require('../dataModules/cateModule')
+var common = require('./common')
 // 获取所有分类数据
 exports.getAllCateList = (req,res) => {
     // 调用分类数据模块获取所有数据
@@ -46,6 +47,26 @@ exports.addCategories = (req,res) => {
             res.json({
                 code:200,
                 msg:'添加成功'
+            })
+        }
+    })
+}
+
+// 根据id删除分类数据
+exports.delCategoryById = (req,res) => {
+    var id = common.getParameter(req.url).id
+    // 接收用户数据
+    // 调用数据模块进行编辑操作
+    cateController.delCategoryById(id,(err) => {
+        if(err){
+            res.json({
+                code:201,
+                msg:'删除失败'
+            })
+        }else{
+            res.json({
+                code:200,
+                msg:'删除成功'
             })
         }
     })

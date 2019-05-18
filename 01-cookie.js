@@ -8,6 +8,8 @@ app.listen('3009',() => {
 })
 
 app.get('/',(req,res) => {
+    // 毫秒数参照1970-1-1 0-0-0
+    // Date.now():离1970-1-1 0-0-0毫秒数
     var time = new Date(Date.now()+10000).toUTCString()
     console.log(time)
     // 获取cookie的方式

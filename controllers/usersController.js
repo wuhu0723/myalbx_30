@@ -27,6 +27,7 @@ exports.login = (req,res) => {
                     // })
                     // 通过session进行状态保持
                     req.session.isLogin = 'true'
+                    // 将获取到当前用户数据存储到session中
                     req.session.currentUser = data
                     
                     res.end(JSON.stringify({

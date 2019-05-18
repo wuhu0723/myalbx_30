@@ -34,10 +34,13 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended:false}))
 
 // 添加所有请求的路由中间件函数
+// 导航守卫+拦截器
+// 这个中间件只关注路由跳转
 app.use((req,res,next) => {
     // 判断是否登陆
     // 前台页面不用登陆:req.url.indexOf('/admin') == -1
     if(req.session.isLogin && req.session.isLogin == 'true' || req.url.indexOf('/admin') == -1 || req.url == '/admin/login'){
+        // 进行下一步操作
         next()
     }else{
         res.redirect('/admin/login')

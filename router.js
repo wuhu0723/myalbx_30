@@ -4,6 +4,8 @@ var express = require('express')
 var pagesController = require('./controllers/pagesController')
 // 引入用户管理控制器
 var usersController = require('./controllers/usersController')
+// 引入分类管理控制器
+var cateController = require('./controllers/cateConreoller')
 // 创建路由模块对象
 var router = express.Router()
 // 挂载路由配置
@@ -30,5 +32,6 @@ router.get('/',pagesController.getIndexPage)
 
 // 后台业务处理
       .post('/login',usersController.login)
+      .get('/getCategories',cateController.getAllCateList)
 
 module.exports = router

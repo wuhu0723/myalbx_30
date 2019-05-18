@@ -20,10 +20,19 @@ exports.login = (req,res) => {
             if(data){ //返回了数据行,说明根据邮箱查询到数据
                 // 再来判断是否正确
                 if(data.password == req.body.password){
-                    res.json({
+                    // 写入登陆状态
+                    // res.writeHead(200,{
+                    //     // expire
+                    //     'Set-Cookie':'isLogin=true'
+                    // })
+                    // 通过session进行状态保持
+                    req.session.isLogin = 'true'
+                    req.session.currentUser = data
+                    
+                    res.end(JSON.stringify({
                         code:200,
                         msg:'登陆成功'
-                    })
+                    }))
                 }else{
                     res.json({
                         code:201,

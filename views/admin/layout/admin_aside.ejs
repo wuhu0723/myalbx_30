@@ -4,7 +4,7 @@
       <h3 class="name">布头儿</h3>
     </div>
     <ul class="nav">
-      <li class="active">
+      <li id='admin'>
         <a href="/admin"><i class="fa fa-dashboard"></i>仪表盘</a>
       </li>
       <li>
@@ -17,10 +17,10 @@
           <li id='categories'><a href="/admin/categories">分类目录</a></li>
         </ul>
       </li>
-      <li>
+      <li id='comments'>
         <a href="/admin/comments"><i class="fa fa-comments"></i>评论</a>
       </li>
-      <li>
+      <li id='users'>
         <a href="/admin/users"><i class="fa fa-users"></i>用户</a>
       </li>
       <li>
@@ -28,12 +28,12 @@
           <i class="fa fa-cogs"></i>设置<i class="fa fa-angle-right"></i>
         </a>
         <ul id="menu-settings" class="collapse">
-          <li><a href="/admin/nav-menus">导航菜单</a></li>
-          <li><a href="/admin/slides">图片轮播</a></li>
-          <li><a href="/admin/settings">网站设置</a></li>
+          <li id='nav-menus'><a href="/admin/nav-menus">导航菜单</a></li>
+          <li id='slides'><a href="/admin/slides">图片轮播</a></li>
+          <li id='settings'><a href="/admin/settings">网站设置</a></li>
         </ul>
       </li>
     </ul>
   </div>
-
+  <script src="/assets/js/common.js"></script>
   <script src="/assets/js/admin_aside.js"></script>

@@ -3,13 +3,15 @@ $(function(){
     // 1.获取到当前路由，需要判断是否带参数
     // http://127.0.0.1:3004/admin/post-add?id=1
     // 判断是否有参数，就是看是否有问号
-    var index = location.href.indexOf('?')
-    var routername
-    if(index == -1){
-        routername = location.href.substring(location.href.lastIndexOf('/')+1)
-    }else{
-        routername = location.href.substring(location.href.lastIndexOf('/')+1,index)
-    }
+    // var index = location.href.indexOf('?')
+    // var routername
+    // if(index == -1){
+    //     routername = location.href.substring(location.href.lastIndexOf('/')+1)
+    // }else{
+    //     routername = location.href.substring(location.href.lastIndexOf('/')+1,index)
+    // }
+    var routername = itcast.getRouterName(location.href)
+    
     // 2.获取到当前元素，为元素进行相关设置
     var menu_posts = $('#menu-posts')
     if(routername == 'posts' || routername == 'post-add' || routername == 'categories'){
@@ -25,5 +27,6 @@ $(function(){
     }
 
     // 为当前li元素添加样式
+    $('li').removeClass('active')
     $('#'+routername).addClass('active')
 })

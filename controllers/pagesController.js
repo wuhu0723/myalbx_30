@@ -22,7 +22,7 @@ exports.getAdminPage = (req,res) => {
     // }else{
     //     res.redirect('/admin/login')
     // }
-    console.log(req.session)
+    // console.log(req.session)
     // 因为是使用session进行了状态保持，所以这里应该获取req.session
     if(req.session.isLogin && req.session.isLogin == 'true'){
         res.render('admin/index.ejs')

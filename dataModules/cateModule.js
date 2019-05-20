@@ -48,3 +48,18 @@ exports.delCategoryById = (id,callback) => {
         }
     })
 }
+
+// 实现根据id实现批量删除
+exports.delCategories = (ids,callback) => {
+    // ?会将传入的参数当成一个值来处理
+    // var sql = "delete from categories where id in ('?')"
+    var sql = `delete from categories where id in (${ids})`
+    connection.query(sql,(err,results) => {
+        console.log(ids,sql)
+        if(err){
+            callback(err)
+        }else{
+            callback(null)
+        }
+    })
+}

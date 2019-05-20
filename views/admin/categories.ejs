@@ -67,7 +67,8 @@
         <td>{{value.slug}}</td>
         <td class="text-center">
           <a href="javascript:;" data-id="{{value.id}}" data-name="{{value.name}}" data-slug="{{value.slug}}" class="btn btn-info btn-xs btn-edit">编辑</a>
-          <a href="javascript:;" onclick='delCate({{value.id}})' class="btn btn-danger btn-xs btn-del">删除</a>
+          <!-- <a href="javascript:;" data-id="{{value.id}}" onclick='delCate({{value.id}})' class="btn btn-danger btn-xs btn-del">删除</a> -->
+          <a href="javascript:;" data-id="{{value.id}}" class="btn btn-danger btn-xs btn-del">删除</a>
         </td>
       </tr>
     {{/each}}

@@ -126,6 +126,10 @@ $(function () {
         for (var i = 0; i < allChk.length; i++) {
             ids.push(allChk[i].dataset['id'])
         }
+        // var ids = allChk.map(function(index,value){
+        //     return $(value).data('id')
+        // })
+        // console.log(ids)
         // 发起请求
         // console.log(ids)
         $.ajax({
@@ -133,6 +137,7 @@ $(function () {
             url:'/delCategories',
             // 后台要求参数是值是id以,分隔的字符串，生成一个对象传递
             data:{ids:ids.join(',')}, // {ids:"1,2,3"}
+            // data:{ids:ids}, // {ids:"1,2,3"}
             dataType:'json',
             success:function(result){
                 console.log(result)

@@ -75,7 +75,7 @@ exports.delCategoryById = (req,res) => {
 
 // 批量删除，传入的参数的格式是：1,2,3,4 字符串拼接的格式
 exports.delCategories = (req,res) => {
-    // console.log(req.body)
+    console.log(req.body)
     // 获取id
     var ids = req.body.ids
     // 调用数据模块进行批量删除

@@ -15,16 +15,16 @@
         <!-- show when multiple checked -->
         <a class="btn btn-danger btn-sm" href="javascript:;" style="display: none">批量删除</a>
         <form class="form-inline">
-          <select name="" class="form-control input-sm">
-            <option value="">所有分类</option>
-            <option value="">未分类</option>
+          <select name="" class="form-control input-sm cateSelector">
+        
           </select>
-          <select name="" class="form-control input-sm">
-            <option value="">所有状态</option>
-            <option value="">草稿</option>
-            <option value="">已发布</option>
+          <select name="" class="form-control input-sm statuSelector">
+            <option value="all">所有状态</option>
+            <option value="drafted">草稿</option>
+            <option value="published">已发布</option>
+            <option value="unrelease">未发布</option>
           </select>
-          <button class="btn btn-default btn-sm">筛选</button>
+          <input type="button" class="btn btn-default btn-sm btnFilter" value="筛选">
         </form>
         <!-- 分页区域 -->
         <ul class="pagination pagination-sm pull-right" style='float:right'>

@@ -4,7 +4,7 @@ module.exports = {
     // 获取所有文章数据
     getAllPostList(req,res){
         // 只要配置了body-parse就可以这样取值
-        // console.log(req.query)
+        console.log(req.query)
         // 以后如果是get方式传递的参数，都可以使用req.query来获取，它得到的是一个对象
         // 调用数据模块获取所有文章数据
         postsModule.getAllPostList(req.query,(err,data) => {

@@ -45,5 +45,17 @@ module.exports = {
                 })
             }
         })
-    }
+    },
+
+    // 新增文章
+    addPost(obj,callback){
+        var sql = 'insert into posts values(null,?,?,?,?,?,?,?,?,?,?)'
+        connection.query(sql,[obj.slug,obj.title,obj.feature,obj.created,obj.content,obj.views,obj.likes,obj.status,obj.user_id,obj.category_id],(err,results) => {
+            if(err){
+                callback(err)
+            }else{
+                callback(null,results)
+            }
+        })
+    },
 }

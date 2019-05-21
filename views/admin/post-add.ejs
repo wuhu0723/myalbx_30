@@ -8,7 +8,7 @@
       </div>
       <!-- 有错误信息时展示 -->
       <div class="alert alert-danger" style="display:none">
-        <strong>错误！</strong> <span>用户名或密码错误！</span>
+        <strong>提示：</strong> <span>用户名或密码错误！</span>
       </div>
       <form class="row">
         <div class="col-md-9">
@@ -30,14 +30,13 @@
           <div class="form-group">
             <label for="feature">特色图像</label>
             <!-- show when image chose -->
+            <input type="hidden" name='feature' class="postimg">
             <img class="help-block thumbnail" style="display: none;width:100px">
             <input id="feature" class="form-control" name="feature" type="file">
           </div>
           <div class="form-group">
             <label for="category">所属分类</label>
-            <select id="category" class="form-control" name="category">
-              <option value="1">未分类</option>
-              <option value="2">潮生活</option>
+            <select id="category" class="form-control cateSelector" name="category_id">
             </select>
           </div>
           <div class="form-group">
@@ -52,7 +51,7 @@
             </select>
           </div>
           <div class="form-group">
-            <button class="btn btn-primary" type="submit">保存</button>
+            <input type="button" class="btn btn-primary btnsave" value="保存">
           </div>
         </div>
       </form>
@@ -62,4 +61,5 @@
 
   <%- include('./layout/admin_footer.ejs');%>
 
+  <script src="/assets/vendors/ckeditor/ckeditor.js"></script>
   <script src="/assets/js/postAdd.js"></script>

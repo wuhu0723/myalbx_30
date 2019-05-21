@@ -46,6 +46,7 @@ router.get('/',pagesController.getIndexPage)
       .post('/delCategories',cateController.delCategories)
       // 文章路由配置
       .get('/getAllPostList',postsController.getAllPostList)
+      .post('/addPost',postsController.addPost)
 
 
 
